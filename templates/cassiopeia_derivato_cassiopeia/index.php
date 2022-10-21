@@ -119,6 +119,28 @@ $wa->getAsset('style', 'fontawesome')->setAttribute('rel', 'lazy-stylesheet');
     <jdoc:include type="scripts" />
 </head>
 
+<style>
+.menu_tabs ul {
+    display:grid;
+    grid-template-columns: repeat(5,1fr);
+
+    grid-gap:10px;
+    border-bottom:solid 1px #ccc;
+ 
+}
+
+
+
+.active.current {
+    border-top:solid 1px #ccc;
+    border-left:solid 1px #ccc;
+    border-right:solid 1px #ccc;
+    border-bottom:solid 5px #fff;
+    padding:5px;
+    margin-top:-5px;
+}
+</style>
+
 <body class="site <?php echo $option
     . ' ' . $wrapper
     . ' view-' . $view
@@ -172,9 +194,10 @@ $wa->getAsset('style', 'fontawesome')->setAttribute('rel', 'lazy-stylesheet');
     </header>
 
     <?php if ($this->countModules('top-0', true)) : ?>
-        <div class="grid-child container-top-0">
-            <jdoc:include type="modules" name="top-0" style="card" />
+        <div class="menu_tabs">
+            <jdoc:include type="modules" name="top-0" style="none" />
         </div>
+        <p class="bobo">--</p>
     <?php endif; ?>
 
     <div class="site-grid">

@@ -726,7 +726,7 @@ div#maximenuck116.maximenuckv li.fullwidth > div.floatck {
 }
 
 div#maximenuck116.maximenuckh li.fullwidth > div.floatck > div.maxidrop-main {
-	width: auto;
+	width: auto !important;
 }
 
 div#maximenuck116.maximenuckv li.fullwidth > div.floatck > .maxidrop-main {

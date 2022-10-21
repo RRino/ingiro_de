@@ -232,7 +232,7 @@ article{
 	margin-top:10px;
 }*/
 </style>
-<?php $articoli = Rtabs_giriHelper::get_articles_category(2,2);
+<?php $articoli = Rtabs_giriHelper::get_articles_category(11,2);
 
 $art1 = Rtabs_giriHelper::get_article_introtext(1);
 ?>
