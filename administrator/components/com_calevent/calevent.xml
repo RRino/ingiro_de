@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="component" method="upgrade">
+	<name>com_calevent</name>
+	<author>rino</author>
+	<creationDate>19 August, 2022</creationDate>
+	<copyright>(C) 2022, rino</copyright>
+	<license>MIT</license>
+	<authorEmail>rino.ruggeri@gmail.com</authorEmail>
+	<authorUrl>ingiro.de</authorUrl>
+	<version>1.0.0</version>
+	<description>COM_CALEVENT_XML_DESCRIPTION</description>
+	<namespace path="src">Joomla\Component\Calevent</namespace>
+
+	<!-- Runs on install -->
+	<install>
+		<sql>
+			<file driver="mysql" charset="utf8">sql/install.mysql.utf8.sql</file>
+		</sql>
+	</install>
+
+	<uninstall> <!-- Runs on uninstall -->
+		<sql>
+			<file driver="mysql" charset="utf8">sql/uninstall.mysql.utf8.sql</file>
+		</sql>
+	</uninstall>
+
+	<update>  <!-- Runs on update -->
+		<schemas>
+			<schemapath type="mysql">sql/updates/mysql</schemapath>
+		</schemas>
+	</update>
+	
+	<files folder="site">
+		<folder>layouts</folder>
+		<folder>helpers</folder>
+		<folder>src</folder>
+		<folder>tmpl</folder>
+	</files>
+
+	<languages folder="site">
+		<language tag="en-GB">language/en-GB/com_calevent.ini</language>
+	</languages>
+
+ <media folder="media" destination="com_calevent">
+		<folder>js</folder>
+		<folder>css</folder>
+		<folder>images</folder>
+		<filename>joomla.asset.json</filename>
+    </media>
+
+	<administration>
+		<menu>COM_CALEVENT</menu>
+		<submenu>
+			<!--
+				Note that all & must be escaped to &amp; for the file to be valid
+				XML and be parsed by the installer
+			-->
+			<menu link="option=com_calevent"
+				view="notes" img="class:basket" alt="CALEVENT/Notes">COM_CALEVENT_NOTES</menu>
+			<menu link="option=com_calevent&amp;view=icomoon"
+				view="icomoon" img="class:code" alt="CALEVENT/Icomoon">COM_CALEVENT_ICOMOON</menu>
+						<menu link="option=com_calevent&amp;view=eventos" view="eventos" img="class:book" alt="CALEVENT/Eventos">COM_CALEVENT_SUBMENU_EVENTOS</menu>
+			<!--{{inject: administrator_sub_menu}}-->
+		</submenu>
+		<files folder="admin">
+			<filename>access.xml</filename>
+			<filename>config.xml</filename>
+			<filename>calevent.xml</filename>
+			<folder>forms</folder>
+			<folder>helpers</folder>
+			<folder>services</folder>
+			<folder>sql</folder>
+			<folder>src</folder>
+			<folder>tmpl</folder>
+		</files>
+		<languages folder="admin">
+			<language tag="en-GB">language/en-GB/com_calevent.ini</language>
+			<language tag="en-GB">language/en-GB/com_calevent.sys.ini</language>
+		</languages>
+	</administration>
+	<dashboards>
+		<dashboard title="COM_CALEVENT_DASHBOARD_TITLE" icon="icon-file-alt">calevent</dashboard>
+	</dashboards>
+	
+	    <fields name="params">
+        <fieldset name="params">
+            <field
+                name="dashboardId" 
+                type="text" 
+                label="Dashboard ID"
+                description="com_dashboard_desc"
+                default="1"
+            >   
+            </field>
+        </fieldset>
+    </fields>
+    
+</extension>

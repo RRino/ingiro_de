@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config>
+	<fieldset
+		name="basic"
+		label="COM_CALEVENT_CONFIG_BASIC"
+		description="COM_CALEVENT_CONFIG_BASIC_DESC"
+		>
+		<!-- The basic configuration fields would be here -->
+		
+		<field
+			name="sigla"
+			type="radio"
+			layout="joomla.form.field.radio.switcher"
+			label="Sigla giro nel giorno"
+			default="0"
+			>
+			<option value="0">NO</option>
+			<option value="1">SI</option>
+		</field>
+		
+		<field
+			name="link_nomi"
+			type="radio"
+			layout="joomla.form.field.radio.switcher"
+			label="link sotto"
+			description="Aggiunge nomi giri con link sotto al calendario"
+			default="0"
+			>
+			<option value="0">NO</option>
+			<option value="1">SI</option>
+		</field>
+		
+	</fieldset>
+	
+			
+
+	
+	
+	
+	
+	<fieldset
+		name="permissions"
+		label="JCONFIG_PERMISSIONS_LABEL"
+		description="JCONFIG_PERMISSIONS_DESC"
+		>
+		
+		
+		<field
+			name="rules"
+			type="rules"
+			label="JCONFIG_PERMISSIONS_LABEL"
+			validate="rules"
+			filter="rules"
+			component="com_calevent"
+			section="component"
+		/>
+
+	</fieldset>
+</config>
