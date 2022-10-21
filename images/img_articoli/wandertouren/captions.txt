@@ -1,0 +1,26 @@
+﻿
+Park_Montesole_winter.gif|Kulinarische Wandertouren|Winter im Regionalpark Monte Sole.
+erzeugerbesuch_kaese.gif|Kulinarische Wandertouren|Käseverkostung auf einem Hof.
+besuch_baeckerin.gif|Kulinarische Wandertouren|Verkostung in einem landwirtschaftlichen Betrieb.
+erzeugerbesuch2.gif|Kulinarische Wandertouren|Beim Bauern, blaue Wand vom Kupferspritzen.
+besuch_kaeserei.gif|Kulinarische Wandertouren|Besuch in einem landwirtschaftlichem Betrieb mit eigener Käseherstellung.
+erzeugerbesuch.gif|Kulinarische Wandertouren|Verkostung im Agriturismo Ca' di Malfolle
+erzeugerbesuch_picknick.gif|Kulinarische Wandertouren|Erzeugerbesuch mit Picknick im Grünen
+imbiss_weinberg.gif|Kulinarische Wandertouren|Verkostung im Weinberg, Weingut Folesano
+lavendel.gif|Kulinarische Wandertouren|Lavendelanbau auf den Hügeln bei Marzabotto.
+lavendel2.gif|Kulinarische Wandertouren|Lavendel
+picknick.gif|Kulinarische Wandertouren|Selbst zubereitetes Mittagessen beim Bauern nach der Wanderung.
+picknick2.gif|Kulinarische Wandertouren|Frisches Gemüse vom Bauern.
+wandern_mit_hund.gif|Kulinarische Wandertouren|Wandern mit Hund.
+wanderung__badolo.gif|Kulinarische Wandertouren|Wanderung im Park Monte Sole, Hügelgebiet bei Bologna.
+wanderung_feldspat.gif|Kulinarische Wandertouren|Wanderung auf Feldspat in der Umgebung von Bologna.
+wanderung_folesano.gif|Kulinarische Wandertouren|Verkostung im Weingut Folesano nach der Wanderung im Park Monte Sole.
+wanderung_fruehling.gif|Kulinarische Wandertouren|Wanderung auf den Hügeln bei Bologna.
+wanderung_mit_gruppe.gif|Kulinarische Wandertouren|Wanderung mit einer Gruppe.
+wanderung_mit_kind.gif|Kulinarische Wandertouren|Begegnung mit einer Bäuerin.
+wanderung_montesole.gif|Kulinarische Wandertouren|Wanderung im Park Monte Sole.
+wanderung_montesole2.gif|Kulinarische Wandertouren|Wanderung im Historischen und Naturpark Monte Sole.	
+wanderung_sansilvestro.gif|Kulinarische Wandertouren|Wanderung in San Silvestro/ Marzabotto
+wanderung_savigno2.gif|Kulinarische Wandertouren|Wanderung bei Savigno/Bologna.
+wanderung_tole2.gif|Kulinarische Wandertouren|Wanderung bei Tolè im Bologneser Apennin.
+winzerbesuch_folesano.gif|Kulinarische Wandertouren|Verkostung im Weingut Folesano.
