@@ -19,6 +19,7 @@ use Joomla\CMS\Uri\Uri;
 
 $app = Factory::getApplication();
 $wa  = $this->getWebAssetManager();
+//$app = JFactory::getApplication();
 
 // Browsers support SVG favicons
 $this->addHeadLink(HTMLHelper::_('image', 'joomla-favicon.svg', '', [], true, 1), 'icon', 'rel', ['type' => 'image/svg+xml']);
@@ -119,27 +120,7 @@ $wa->getAsset('style', 'fontawesome')->setAttribute('rel', 'lazy-stylesheet');
     <jdoc:include type="scripts" />
 </head>
 
-<style>
-.menu_tabs ul {
-    display:grid;
-    grid-template-columns: repeat(5,1fr);
 
-    grid-gap:10px;
-    border-bottom:solid 1px #ccc;
- 
-}
-
-
-
-.active.current {
-    border-top:solid 1px #ccc;
-    border-left:solid 1px #ccc;
-    border-right:solid 1px #ccc;
-    border-bottom:solid 5px #fff;
-    padding:5px;
-    margin-top:-5px;
-}
-</style>
 
 <body class="site <?php echo $option
     . ' ' . $wrapper
@@ -193,12 +174,36 @@ $wa->getAsset('style', 'fontawesome')->setAttribute('rel', 'lazy-stylesheet');
         <?php endif; ?>
     </header>
 
+
+
+
+
     <?php if ($this->countModules('top-0', true)) : ?>
         <div class="menu_tabs">
             <jdoc:include type="modules" name="top-0" style="none" />
         </div>
-        <p class="bobo">--</p>
+        <p class="bobo"></p>
     <?php endif; ?>
+
+<!-- Verifica il tipo di menu menutype per inserire i bordi nel primo tab -->
+<?php 
+$menu = $app->getMenu();
+$menuact = $menu->getActive();
+$tipomenu = $menuact->menutype;
+ if($tipomenu == "giri"){ ?>
+    <style>
+     .nav-item:first-child{
+        border-top:solid 1px #ccc;
+        border-left:solid 1px #ccc;
+        border-right:solid 1px #ccc;
+        border-bottom:solid 2px #fff;
+        padding: 5px;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+     }
+    </style>
+<?php } ?>
+
 
     <div class="site-grid">
         <?php if ($this->countModules('banner', true)) : ?>

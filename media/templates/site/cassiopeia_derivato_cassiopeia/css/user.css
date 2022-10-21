@@ -1,0 +1,23 @@
+/* crea griglia per menu scelta interna a un giro esempio venezia emilia ecc */
+.menu_tabs ul {
+    display:grid;
+    grid-template-columns: repeat(5,1fr);
+    grid-gap:10px;
+ 
+}
+
+/* attiva bordi che simula tabs */
+.active.current {
+    border-top: solid 1px #ccc;
+    border-left: solid 1px #ccc;
+    border-right: solid 2px #ccc;
+    border-bottom: solid 5px #fff;
+    padding: 5px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+/* riga che simula collegamento tabs */
+.bobo {
+    border-top: solid 1px #cccccc;
+    margin-top: -10px;
+}
