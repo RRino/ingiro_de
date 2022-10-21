@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" client="site" method="upgrade">
+	<name>MOD_CALEVENT</name>
+	<creationDate>22/07/2021</creationDate>
+	<author>Rino Ruggeri</author>
+	<authorEmail>rino.ruggeri@gmail.com</authorEmail>
+	<authorUrl>[AUTHOR_URL]</authorUrl>
+	<copyright>[COPYRIGHT]</copyright>
+	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+	<version>1.0.5</version>
+	<description>MOD_CALEVENT_XML_DESCRIPTION</description>
+	<scriptfile>script.php</scriptfile>
+	<namespace path="src">CaleventNamespace\Module\Calevent</namespace>
+	<files>
+		<filename module="mod_calevent">mod_calevent.php</filename>
+		<folder>tmpl</folder>
+		<folder>src/Helper</folder>
+		<folder>language</folder>
+		<filename>mod_calevent.xml</filename>
+	</files>
+	<config>
+		<fields name="params">
+			<fieldset name="caleventparams">
+
+
+		 <field
+			name="sigla"
+			type="radio"
+			layout="joomla.form.field.radio.switcher"
+			label="Sigla giro nel giorno"
+			default="0"
+			>
+			<option value="0">NO</option>
+			<option value="1">SI</option>
+		</field>
+		
+		<field
+			name="link_nomi"
+			type="radio"
+			layout="joomla.form.field.radio.switcher"
+			label="link sotto"
+			description="Aggiunge nomi giri con link sotto al calendario"
+			default="0"
+			>
+			<option value="0">NO</option>
+			<option value="1">SI</option>
+		</field>
+
+			</fieldset>
+		</fields>
+	</config>
+</extension>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" client="site" method="upgrade">
+	<name>MOD_RTABS_GIRI</name>
+	<creationDate>22/08/2022</creationDate>
+	<author>Rino Ruggeri</author>
+	<authorEmail>rino.ruggeri@gmail.com</authorEmail>
+	<authorUrl>https://10righe.org</authorUrl>
+	<copyright>2022</copyright>
+	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+	<version>1.0.0</version>
+	<description>MOD_RTABS_GIRI_XML_DESCRIPTION</description>
+	<scriptfile>script.php</scriptfile>
+	<namespace path="src">Rtabs_giriNamespace\Module\Rtabs_giri</namespace>
+	<files>
+		<filename module="mod_rtabs_giri">mod_rtabs_giri.php</filename>
+		<folder>tmpl</folder>
+		<folder>src/Helper</folder>
+		<folder>language</folder>
+		<filename>mod_rtabs_giri.xml</filename>
+	</files>
+	<config>
+		<fields name="params">
+			<fieldset name="rtabs_giriparams">
+
+
+				<!--<field 
+				  name="maxmenorecenti" 
+			      type="text" 
+				  label="Articoli meno recenti" 
+				  description="Articoli appaiono nell'ultimo box" 
+				  size="10" 
+				  hint="10" 
+				/>
+
+ 				<field 
+				  name="maxbox" 
+			      type="text" 
+				  label="Numero Articoli " 
+				  description="Articoli nei box" 
+				  size="10" 
+				  hint="5" 
+				/>-->
+         
+		 				
+ 				<field 
+				  name="catid" 
+			      type="text" 
+				  label="Categoria Articoli" 
+				  description="Numero della categoria da visualizzare" 
+				  size="10" 
+				  hint="5" 
+				/>
+
+			</fieldset>
+		</fields>
+	</config>
+</extension>

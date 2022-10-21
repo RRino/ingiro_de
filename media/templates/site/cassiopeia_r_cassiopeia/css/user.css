@@ -1,0 +1,87 @@
+body.wrapper-fluid header > .grid-child, body.wrapper-fluid footer > .grid-child {
+ 
+    margin-top: -2px;
+}
+
+
+.mybanner {
+  min-width: 100%;
+}
+
+
+.container-header {
+    background-color: white;
+    background-image: none;
+}
+
+ 
+.container-header .mod-menu {
+    color: #0088cc;
+} 
+
+
+.container-header .mod-menu a {
+    -webkit-border-radius: 0 0 6px 6px;
+    -moz-border-radius: 0 0 6px 6px;
+    border-radius: 0 0 6px 6px; 
+    padding: 3px 15px;
+    color: #0088cc;
+}
+
+
+.container-header .mod-menu a:hover {
+    background-color: #eee;
+}
+
+
+.container-header .navbar-toggler {
+    color: #0088cc;
+    border: 1px solid #0088cc;
+}
+
+/*
+.container-header {
+    background-color: #fed886;
+    background-image: linear-gradient(135deg,#fed886 0,#5e85be 100%);
+    box-shadow: inset 0 5px 5px rgb(0 0 0 / 3%);
+    position: relative;
+    z-index: 10;
+}
+*/
+
+.grid-child.container-nav {
+   
+    background: #fff;
+}
+
+.grid-child.container-below-top {
+    margin-top: 50px;
+    background: #ccc;
+}
+
+ul.mod-menu.mod-list.nav.tag li.current.active {
+    border-top: solid 1px #ccc;
+    border-left: solid 1px #ccc;
+    border-bottom: solid 5px #fff;
+    border-bottom:solid 4px #fff;
+    border-right: solid 1px #ccc;
+      margin-bottom: -6px;
+}
+
+
+.container-header .mod-menu {
+    color: #0088cc;
+}
+
+.grid-child.container-nav2 {
+    border-bottom: solid 1px #ccc;
+    height: 50px;
+}
+
+li.nav-item.current.active {
+    border: solid 1px #fff;
+}
+
+ul#idx li.current.active {
+    background: #ccc;
+}
