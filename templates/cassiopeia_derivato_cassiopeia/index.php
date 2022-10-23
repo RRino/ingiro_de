@@ -37,9 +37,10 @@ $menu     = $app->getMenu()->getActive();
 $pageclass = $menu !== null ? $menu->getParams()->get('pageclass_sfx', '') : '';
 
 // Color Theme
-$paramsColorName = $this->params->get('colorName', 'colors_standard');
+/*$paramsColorName = $this->params->get('colorName', 'colors_standard');
 $assetColorName  = 'theme.' . $paramsColorName;
 $wa->registerAndUseStyle($assetColorName, 'media/templates/site/cassiopeia/css/global/' . $paramsColorName . '.css');
+*/
 
 // Use a font scheme if set in the template style options
 $paramsFontScheme = $this->params->get('useFontScheme', false);
@@ -172,37 +173,19 @@ $wa->getAsset('style', 'fontawesome')->setAttribute('rel', 'lazy-stylesheet');
             <?php endif; ?>
         </div>
         <?php endif; ?>
+
+        <?php if ($this->countModules('top-0', true)) : ?>
+        <div class="menu_tabs">
+            <jdoc:include type="modules" name="top-0" style="none" />
+        </div>
+        <!--<p class="bobo"></p>-->
+        <?php endif; ?>
+
     </header>
 
 
 
 
-
-    <?php if ($this->countModules('top-0', true)) : ?>
-        <div class="menu_tabs">
-            <jdoc:include type="modules" name="top-0" style="none" />
-        </div>
-        <p class="bobo"></p>
-    <?php endif; ?>
-
-<!-- Verifica il tipo di menu menutype per inserire i bordi nel primo tab -->
-<?php 
-$menu = $app->getMenu();
-$menuact = $menu->getActive();
-$tipomenu = $menuact->menutype;
- if($tipomenu == "giri"){ ?>
-    <style>
-     .nav-item:first-child{
-        border-top:solid 1px #ccc;
-        border-left:solid 1px #ccc;
-        border-right:solid 1px #ccc;
-        border-bottom:solid 2px #fff;
-        padding: 5px;
-        border-top-left-radius: 5px;
-        border-top-right-radius: 5px;
-     }
-    </style>
-<?php } ?>
 
 
     <div class="site-grid">

@@ -1,0 +1,1 @@
+DROP TABLE IF EXISTS `#__jn_kick_cass_stats`

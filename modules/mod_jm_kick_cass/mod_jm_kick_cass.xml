@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="1.5" client="site" method="upgrade">
+    <name>KickstartCassiopeia module</name>
+    <author>Maarten Blokdijk</author>
+    <creationDate>2021</creationDate>
+    <copyright>Copyright (C) 2021 jmodules.com</copyright>
+    <license>GNU General Public License version 2 or later</license>
+    <authorEmail>hello@jmodules.com</authorEmail>
+    <authorUrl>www.jmodules.com</authorUrl>
+    <version>1.5</version>
+    <description>
+     V1.5 - Kickstart Cassiopeia is all about the Cassiopeia template that comes with Joomla 4. We have made a customizing module for you, allowing you to quickly get going with Cassiopeia. Get your new Joomla 4 website up and running, looking great in no time! You do not need to create code and/or css for this, all you have to do is configure the module. It has all the essentials you need! Publish on pages you want this to have effect on.
+      <![CDATA[
+    
+      <style>
+        .subform-repeatable-group{margin-top:5px!important;padding:0 10px 0 10px!important}.form-horizontal .control-group{margin-bottom:3px!important}textarea{background-color:#eaeaea!important;width:100%;min-height:500px !important;font-family:Courier New!important;color:#000!important;font-size:13px!important}@media (min-width:768px){joomla-tab>ul{display:block!important;width:200px!important}[dir=ltr] joomla-tab>section{margin-left:200px!important;position:absolute!important;top:190px;min-height:800px!important; width: 83vw;}joomla-tab>ul a[role=tab]{border-bottom:1px solid #b2bfcd;padding:.3rem 1rem}joomla-tab>ul a[role=tab]:hover,joomla-tab>ul a[role=tab][active]{border-bottom:1px solid #b2bfcd;border-right:1px solid #fff;z-index:1!important;width:202px!important;background-color:#fff;border-bottom:1px solid #b2bfcd}}joomla-tab>section{border-radius:10px!important;} #system-message-container joomla-alert {width:35%; float:right;} #permissions {width:80vw} joomla-tab[orientation=vertical]>section{width:50%}
+      </style>
+      ]]>
+    </description>
+    <files>
+        <filename module="mod_jm_kick_cass">mod_jm_kick_cass.php</filename>
+        <filename>index.html</filename>
+        <filename>mod_jm_kick_cass.xml</filename>
+        <filename>stats.sql</filename>
+        <filename>stats_uninstall.sql</filename>
+        <filename>helper.php</filename>
+        <filename>tmpl/default.php</filename>
+        <filename>tmpl/index.html</filename>
+        <filename>elements/stats.php</filename>
+        <filename>languages/en-GB/en-GB.mod_jm_kick_cass.ini</filename>
+        <filename>languages/en-GB/en-GB.mod_jm_kick_cass.sys.ini</filename>
+        <filename>languages/fr-FR/fr-FR.mod_jm_kick_cass.ini</filename>
+        <filename>languages/fr-FR/fr-FR.mod_jm_kick_cass.sys.ini</filename>
+        <filename>languages/nl-NL/nl-NL.mod_jm_kick_cass.ini</filename>
+        <filename>languages/nl-NL/nl-NL.mod_jm_kick_cass.sys.ini</filename>
+        <folder>tmpl</folder>
+        <folder>elements</folder>
+        <folder>languages</folder>
+    </files>
+
+  <languages folder="languages">
+      <language tag="en-GB">en-GB/en-GB.mod_jm_kick_cass.ini</language>
+      <language tag="en-GB">en-GB/en-GB.mod_jm_kick_cass.sys.ini</language>
+      <language tag="fr-FR">fr-FR/fr-FR.mod_jm_kick_cass.ini</language>
+      <language tag="fr-FR">fr-FR/fr-FR.mod_jm_kick_cass.sys.ini</language>
+      <language tag="nl-NL">nl-NL/nl-NL.mod_jm_kick_cass.ini</language>
+      <language tag="nl-NL">nl-NL/nl-NL.mod_jm_kick_cass.sys.ini</language>
+  </languages>
+
+  <updateservers>
+    <server type="extension" name="joonext updates">https://www.jmodules.com/updates/mod_jm_kick_cass.xml</server>
+  </updateservers>
+
+
+    <config>
+        <fields name="params" addfieldpath="modules/mod_jm_kick_cass/elements">>
+        <fieldset name="general" label="KC_GENERAL">
+          <field name="backgroundcolor" class="" type="color" format="rgba" default="rgba(230,230,230,0,80)"	label="KC_BODYBACKGROUNDCOLOR" />
+          <field name="BackgroundImage" type="media" default="" label="KC_BODYBACKGROUNDIMAGE"/>
+          <field name="ContentBackgroundColor" class="" type="color" format="rgba" default="rgba(255,255,255,0,8)"	label="KC_CONTENTBACKGROUNDCOLOR" />
+          <field name="containerfw" type="radio" default="0" label="KC_CONTAINERFW" description="" class="btn-group btn-group-yesno">
+            <option value="1">JYES</option>
+            <option value="0">JNO</option>
+          </field>
+          <field name="sitewidth" class="" type="list" default="1" label="KC_SITEWIDTH">
+            <option value="1">KC_SITEWIDTHDEFAULT</option>
+            <option value="2">KC_SITEWIDTHWIDER</option>
+            <option value="3">KC_SITEWIDTHWIDEST</option>
+          </field>
+          <field name="textdedoration" type="radio" default="0" label="KC_TEXTDECORATION" description="" class="btn-group btn-group-yesno">
+            <option value="1">JYES</option>
+            <option value="0">JNO</option>
+          </field>
+          <field name="ButtonRadius" type="number" default="0.5" label="KC_BUTTONRADIUS" />
+           <field name="ContentRadius" type="number" default="0.5" label="KC_CONTENTRADIUS" />
+           <field name="disablerightclick" type="radio" default="0" label="KC_DISABLERIGHTCLICK" description="" class="btn-group btn-group-yesno">
+            <option value="1">JYES</option>
+            <option value="0">JNO</option>
+           </field>
+        </fieldset>
+          
+        <fieldset name="topnav" label="KC_TOPNAV">
+          <field name="enable_topnav" type="radio" default="0" label="KC_ENABLETOPNAV" description="" class="btn-group btn-group-yesno"> 
+            <option value="1">JYES</option>
+            <option value="0">JNO</option>
+          </field>
+          <field name="topnavheight" class="" type="number" default="25" label="KC_TOPNAVH" showon="enable_topnav:1" />
+          <field name="topnavpadding" class="" type="number" default="3" label="KC_TOPNAVP"  showon="enable_topnav:1"/>
+          <field name="topnavbg" class="" type="color" format="rgba" default="rgba(51,51,51,1" label="KC_TOPNAVBG"  showon="enable_topnav:1" />
+          <field name="topnavcolor" class="" type="color" default="#fff" label="KC_TOPNAVT"  showon="enable_topnav:1"/>
+          <field name="topnavlinkcolor" class="" type="color" default="#fff" label="KC_TOPNAVL"  showon="enable_topnav:1"/>
+          <field name="topnavfloatright" type="radio" default="0" label="KC_TOPNAVFLOAT" description="" class="btn-group btn-group-yesno" showon="menunext:0"> 
+            <option value="1">JYES</option>
+            <option value="0">JNO</option>
+          </field>
+          <field name="topnavcontent" class="" type="editor" filter="raw" default="Phone:+11 11 11 11" label="KC_TOPNAVCONTENT"  showon="enable_topnav:1"/>
+        </fieldset>
+
+          <fieldset name="Header" label="KC_MENUHEADER">
+          <field name="menunext" type="radio" default="0" label="KC_MENUNEXT" description="" class="btn-group btn-group-yesno">
+          <option value="1">JYES</option>
+          <option value="0">JNO</option>
+          </field>
+          <field name="MenuTextColor" class="" type="color" default="#fff"	label="KC_MENUTEXTCOLOR" />
+          <field name="MenubarBackgroundColor" class="" type="color" format="rgba" default="rgba(0,0,0,1)"	label="KC_MENUBACKGROUNDCOLOR" />
+          <field name="MenuBackgroundImage" type="media" default="" label="KC_MENUBACKGROUNDIMAGE"/>
+          <field name="menupadding" type="text" default="15" label="KC_MENUPADDING" />
+          <field name="subwidth" class="" type="NUMBER" default="15"	label="KC_MENU_SUBWIDTH" />
+          <field name="navbarshadow" type="radio" default="0" label="KC_NAVBARSHADOW" description="" class="btn-group btn-group-yesno">
+          <option value="1">JYES</option>
+          <option value="0">JNO</option>
+          </field>
+          <field name="CenterLogo" type="radio" default="0" label="KC_CENTEROLOGO" description="" class="btn-group btn-group-yesno">
+          <option value="1">JYES</option>
+          <option value="0">JNO</option>
+          </field>
+          <field name="HideLogo" type="radio" default="0" label="KC_HIDELOGO" description="" class="btn-group btn-group-yesno">
+          <option value="1">JYES</option>
+          <option value="0">JNO</option>
+          </field>
+          <field name="useupper" type="radio" default="0" label="KC_USEUPPER" description="" class="btn-group btn-group-yesno">
+          <option value="1">JYES</option>
+          <option value="0">JNO</option>
+          </field>
+           <field name="menubarpadding" class="" type="number" default="7" label="KC_PADDING" showon="menunext:1" />
+          <field name="BannerHeight" type="number" default="70" label="KC_BANNERHEIGHT" />
+          <field name="BannerOverlay" class="" type="color" format="rgba" default="rgba(21,64,44,0.5"	label="KC_BANNEROVERLAY" />
+        </fieldset>
+
+        <fieldset name="Footer" label="KC_FOOTER">
+          <field name="FooterBackgroundColor" class="" type="color" format="rgba" default="rgba(23,23,23,0.9)"	label="KC_FOOTERBACKGROUNDCOLOR" />
+          <field name="FooterBackgroundImage" type="media" default="" label="KC_FOOTERBACKGROUNDIMAGE"/>
+        </fieldset>
+
+        <fieldset name="Layout" label="KC_COLORS">
+          <field name="primarycolor" class="" type="color" default="#f8bb19"	label="KC_PRIMARYCOLOR" />
+          <field name="linkcolor" class="" type="color" default="#000000" label="KC_LINKCOLOR" />
+          <field name="hovercolor" class="" type="color" default="#f8bb19"	label="KC_HOVERCOLOR" />
+          <field name="BackgroundColorCardHeader" class="" type="color" format="rgba" default="rgba(0,0,0,1)"	label="KC_BACKGROUNDCOLORCARDHEADER" />	
+          <field name="CardheaderTextColor" class="" type="color"  default="#ffffff"	label="KC_CARDHEADERTEXTCOLOR" />	
+          <field name="BadgeBackground" class="" type="color" format="rgba" default="rgba(250,189,23,0.94)"	label="KC_BADGEBACKGROUND" />	
+          <field name="Badgecolor" class="" type="color"  default="#ffffff"	label="KC_BADGECOLOR" />	
+          <field name="TopABackground" class="" type="color" format="rgba" default="rgba(255,255,255,0)"	label="KC_TOPABACKGROUNDCOLOR" />
+          <field name="TopBBackground" class="" type="color" format="rgba" default="rgba(255,255,255,0)"	label="KC_TOPBBACKGROUNDCOLOR" />
+          <field name="BottomABackground" class="" type="color" format="rgba" default="rgba(255,255,255,0)"	label="KC_BOTTOMABACKGROUNDCOLOR" />
+          <field name="BottomBBackground" class="" type="color" format="rgba" default="rgba(255,255,255,0)"	label="KC_BOTTOMBBACKGROUNDCOLOR" />
+        </fieldset>
+
+        <fieldset name="buttons" label="KC_BUTTONS">
+          <field name="btn-primary-color"  type="color" default="#ffffff"	label="KC_PRIMARY_BUTTON_TEXT" />
+          <field name="btn-primary-background-color" class="" type="color" default="#f8bb19"	label="KC_PRIMARY_BUTTON_BACKGROUND" />
+          <field name="btn-primary-border-color" class="" type="color" default="#f8bb19"	label="KC_PRIMARY_BUTTON_BORDER" />
+          <field name="btn-secondary-color" class="" type="color" default="#353b41"	label="KC_SECONDARY_BUTTON_TEXT" />
+          <field name="btn-secondary-background-color" class="" type="color" default="#fff"	label="KC_SECONDARY_BUTTON_BACKGROUND" />
+          <field name="btn-secondary-border-color" class="" type="color" default="#ced4da"	label="KC_SECONDARY_BUTTON_BORDER" />
+          <field name="btn-info-color" class="" type="color" default="#fff"	label="KC_INFO_BUTTON_TEXT" />
+          <field name="btn-info-background-color" class="" type="color" default="#30638d"	label="KC_INFO_BUTTON_BACKGROUND" />
+          <field name="btn-info-border-color" class="" type="color" default="#30638d"	label="KC_INFO_BUTTON_BORDER" />
+          <field name="btn-success-color" class="" type="color" default="#fff"	label="KC_SUCCESS_BUTTON_TEXT" />
+          <field name="btn-success-background-color" class="" type="color" default="#448344"	label="KC_SUCCESS_BUTTON_BACKGROUND" />
+          <field name="btn-success-border-color" class="" type="color" default="#448344"	label="KC_SUCCESS_BUTTON_BORDER" />
+          <field name="btn-warning-color" class="" type="color" default="#fff"	label="KC_WARNING_BUTTON_TEXT" />
+          <field name="btn-warning-background-color" class="" type="color" default="#ad6200"	label="KC_WARNING_BUTTON_BACKGROUND" />
+          <field name="btn-warning-border-color" class="" type="color" default="#ad6200"	label="KC_WARNING_BUTTON_BORDER" />
+          <field name="btn-danger-color" class="" type="color" default="#fff"	label="KC_DANGER_BUTTON_TEXT" />
+          <field name="btn-danger-background-color" class="" type="color" default="#a51f18"	label="KC_DANGER_BUTTON_BACKGROUND" />
+          <field name="btn-danger-border-color" class="" type="color" default="#a51f18"	label="KC_DANGER_BUTTON_BORDER" />
+        </fieldset>
+
+        <fieldset name="Fonts" label="KC_TYPO">
+          <field name="googleFontNameBody" class="" type="text" default="Fira Sans" label="KC_TYPOBODYFONT"  />
+          <field name="googleFontWeightBody" class="" type="text" default="300"	label="KC_TYPOBODYFONTWEIGHT" />
+          <field name="googleFontNameHeadings" class="" type="text" default="Roboto" label="KC_TYPOHEADINGSFONT"  />
+          <field name="googleFontWeightHeadings" class="" type="text" default="700"	label="KC_TYPOHEACINGSFONTWEIGHT" />
+          <field name="BodyFontSize" class="" type="number" default="1" label="KC_TYPOBODYFONTSIZE" />
+          <field name="H1FontSize" class="" type="number" default="1.875" label="KC_TYPOH1" />
+          <field name="H2FontSize" class="" type="number" default="1.571" label="KC_TYPOH2" />
+          <field name="H3FontSize" class="" type="number" default="1.286" label="KC_TYPOH3" />
+          <field name="H4FontSize" class="" type="number" default="1.111" label="KC_TYPOH4" />
+          <field name="H5FontSize" class="" type="number" default="1.050" label="KC_TYPOH5" />
+        </fieldset>
+
+        <fieldset name="Webmatertools" label="KC_WEBMASTER">
+          <field name="googleAnalytics" class="" type="textarea" rows="10" cols="5" width="500px" default="" filter="raw"	label="KC_GA_CODE" />
+        </fieldset>
+
+        <fieldset name="Code" label="KC_CODE">
+          <field name="customhead" class="" type="textarea" rows="10" cols="5" default="" filter="raw" label="KC_CUSTOM_HEAD" />
+          <field name="custombody" class="" type="textarea" rows="10" cols="5" default="" filter="raw" label="KC_CUSTOM_BODY" />
+        </fieldset>
+
+        <fieldset name="CustomCSS" label="KC_CUSTOM_CSS">
+          <field name="customcss" class="" type="textarea" rows="10" cols="5" default="" filter="raw"	label="KC_CUSTOM_CSS_CODE" />
+          <field name="customcssmobile" class="" type="textarea" rows="10" cols="5" default="" filter="raw"	label="KC_CUSTOM_CSS_MOBILE"	 />
+          <field name="customcssdesktop" class="" type="textarea" rows="10" cols="5" default="" filter="raw"	label="KC_CUSTOM_CSS_DESKTOP"	 />
+        </fieldset>
+
+        <fieldset name="favicon" label="KC_FAVICON">
+            <field name="setfavicon" type="radio" default="0" label="KC_PRO" disabled="true" description="" class="btn-group btn-group-yesno"> 
+            <option value="1">JYES</option>
+            <option value="0">JNO</option>
+          </field>
+          <field name="faviconimage" type="media" default="" showon="setfavicon:1" label="KC_FAVICONIMAGE"/>
+          <field name="mscolor" class="" type="color" default="#ffffff"	label="KC_MSTILECOLOR" showon="setfavicon:1" />
+          <field name="themecolor" class="" type="color" default="#ffffff"	label="KC_THEMETILECOLOR" showon="setfavicon:1" />
+        </fieldset>
+
+        <fieldset name="ipblock" label="KC_IP">
+            <field name="setipblock" type="radio" default="0" label="KC_PRO" disabled="true" description="" class="btn-group btn-group-yesno"> 
+            <option value="1">JYES</option>
+            <option value="0">JNO</option>
+          </field>
+         <field name="j1_ip" type="textarea" rows="5" cols="5" default="0.0.0.0, 0.0.0.1" label="KC_PRO" disabled="true"  description="KC_IPACCESS_DESC" showon="setipblock:1"/>
+         <field name="j1_msg" type="textarea" rows="5" cols="5" default="You are not authorized to view this page" label="KC_IPBLOCKMESSAGE"  description="KC_IPBLOCKMESSAGE_DESC" showon="setipblock:1" />
+        </fieldset>
+
+        <fieldset name="mobilebottombar" label="KC_MOBILEBOTTOMBAR">
+            <field name="mobilebottombar" type="radio" default="0" label="KC_PRO" disabled="true" description="" class="btn-group btn-group-yesno">
+              <option value="1">JYES</option>
+              <option value="0">JNO</option>
+            </field>
+            <field name="mobilebg" class="" type="color"  default="#24ad1f"	label="KC_MOBILEBOTTOMBARBG" showon="mobilebottombar:1" />	
+            <field name="mobilecolor" class="" type="color"  default="#fff"	label="KC_MOBILEBOTTOMBARCOLOR" showon="mobilebottombar:1" />	
+            <field name="phone" class="" type="text" default=""	description="" label="KC_MOBILEBOTTOMBARPHONE" showon="mobilebottombar:1" />
+            <field name="whatsapp" class="" type="text" default=""	description="" label="KC_MOBILEBOTTOMBARWHATSAPP" showon="mobilebottombar:1" />
+            <field name="email" class="" type="text" default=""	description="" label="KC_MOBILEBOTTOMBAREMAIL" showon="mobilebottombar:1" />
+            <field name="skype" class="" type="text" default=""	description="" label="KC_MOBILEBOTTOMBARSKYPE" showon="mobilebottombar:1" />
+        </fieldset>
+
+        <fieldset name="cookies" label="KC_PRIVACYCOOKIES">
+          <field name="CookieNotice" type="radio" default="0" label="KC_PRO" disabled="true" description="" class="btn-group btn-group-yesno">
+            <option value="1">JYES</option>
+            <option value="0">JNO</option>
+          </field>
+          <field name="CookieText" class="" type="text" default="This site uses cookies. if you continue, you agree with this"	label="KC_COOKIETEXT" showon="CookieNotice:1" />
+          <field name="CookieLinkText" class="" type="text" default="Show policy"	label="KC_COOKIELINKTEXT" showon="CookieNotice:1" />
+          <field name="CookieLink" class="" type="text" default="/privacy"	label="KC_COOKIELINK" showon="CookieNotice:1" />
+          <field name="CookieDismiss" class="" type="text" default="Understood"	label="KC_COOKIEDISMISS" showon="CookieNotice:1" />
+          <field name="hidenotice" class="span4" type="list" default="10" label="KC_HIDENOTICE" showon="CookieNotice:1" >
+            <option value="5">5</option>
+            <option value="10">10</option>
+            <option value="20">20</option>
+            <option value="30">30</option>
+            <option value="90">90</option>
+            <option value="180">180</option>
+            <option value="360">360</option>
+          </field>     
+        </fieldset>
+
+        <fieldset name="popups" label="KC_POPUP">
+          <field name="Popup" type="radio" default="0" label="KC_PRO" disabled="true" description="" class="btn-group btn-group-yesno">
+            <option value="1">JYES</option>
+            <option value="0">JNO</option>
+          </field>
+          <field name="PopupText" class="" type="editor" filter="raw" default="This is a popup"	label="KC_POPUPTEXT" showon="Popup:1" />
+          <field name="PopupDismiss" class="" type="text" default="close"	label="KC_POPUPDISMISS" showon="Popup:1" />
+          <field name="popupbgcolor" class="" type="color"  default="#ffffff"	label="KC_POPUPBGCOLOR" showon="Popup:1"/>
+          <field name="popuptextcolor" class="" type="color"  default="#3d3d3d"	label="KC_POPUPTEXTCOLOR" showon="Popup:1" />
+          <field name="popupwidth" class="" type="number" default="600" label="KC_POPUPWIDTH" showon="Popup:1" />
+          <field name="loadelay" class="span4" type="list" default="0" label="KC_POPUPLOADELAY" showon="Popup:1"  >
+            <option value="100">0</option>
+            <option value="1000">1</option>
+            <option value="2000">2</option>
+            <option value="3000">3</option>
+            <option value="4000">4</option>
+            <option value="5000">5</option>
+            <option value="10000">10</option>
+            <option value="15000">15</option>
+          </field>
+          <field name="fadeinduration" class="span4" type="list" default="3" label="KC_POPUPFADEIN" showon="Popup:1"  >
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+          </field>
+        </fieldset>
+
+        <fieldset name="socialshare" label="KC_SHAREBUTTONS">
+          <field name="ShowShare" type="radio" default="0" label="KC_PRO" disabled="true" description="" class="btn-group btn-group-yesno">
+            <option value="1">JYES</option>
+            <option value="0">JNO</option>
+          </field>
+          <field name="SharePos" class="" type="list" default="left" label="KC_SHAREPOS" showon="ShowShare:1">
+            <option value="left">Left</option>
+            <option value="right">Right</option>
+          </field>
+          <field name="ShareNumber" class="" type="list" default="3" label="KC_SHARENUMBER" showon="ShowShare:1">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+          </field>
+          <field name="socialtop" class="" type="NUMBER" default="20"	label="KC_SHAREPADDINGTOP" showon="ShowShare:1" />
+        </fieldset>
+
+
+
+        
+
+        </fields>
+    </config>
+</extension>
